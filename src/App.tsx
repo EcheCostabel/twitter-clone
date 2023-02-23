@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import {Text} from '@chakra-ui/react'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+
 
   return (
-    <div>
+    <Text color="primary.500">
       Hello World
-    </div>
+    </Text>
   )
 }
 
