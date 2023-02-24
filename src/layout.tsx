@@ -1,8 +1,7 @@
 import React from 'react'
-import {Container, Stack, Text, Icon, Box, Button, StackDivider} from  '@chakra-ui/react';
+import {Container, Stack, Text, Icon, Box, Button, StackDivider, useColorMode, useColorModeValue} from  '@chakra-ui/react';
 import {FaTwitter} from 'react-icons/fa'
 import { BsHouse, BsHash, BsBell, BsEnvelope, BsBookmark, BsList, BsPerson, BsThreeDots } from 'react-icons/bs'
-import theme from './theme';
 import { Link } from 'react-router-dom';
 
 interface propsWithChildren {
@@ -11,14 +10,18 @@ interface propsWithChildren {
 
 
 const Layout = ({ children }: propsWithChildren): JSX.Element => {
+
+    const { toggleColorMode } = useColorMode();
+    const logoColor = useColorModeValue('primary.500', undefined)
+
     return (
         <Container alignSelf='center' maxWidth='container.xl' height='100%' paddingX={0}>
             
             <Stack direction='row' height='100%' divider={<StackDivider />}>
                 <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72}>
-                    <Link to='/'>
-                    <Icon as={FaTwitter} width={6} height={6}></Icon>
-                    </Link>
+                    
+                    <Icon as={FaTwitter} color={logoColor} width={7} height={7} onClick={toggleColorMode}></Icon>
+                    
                     <Stack spacing={6}>
                         <Link to='/'>
                         <Stack direction='row' alignItems='center' spacing={6}>
@@ -57,7 +60,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
                             <Text fontWeight='bold' fontSize='lg'>Mas opciones</Text>
                         </Stack>
                     </Stack>
-                    <Button size='lg' colorScheme='primary'>Twittear</Button>
+                    <Button size='lg' colorScheme={'primary'}>Twittear</Button>
                 </Stack>
                <Box paddingX={4}>{children}</Box>
             </Stack>
