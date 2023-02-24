@@ -9,7 +9,9 @@ interface propsWithChildren {
 
 const Layout = ({ children }: propsWithChildren): JSX.Element => {
     return (
-        <Container>{children}</Container>
+        <Container alignSelf='center' maxWidth='container.md'>
+            {children}
+        </Container>
     )
 }
 
