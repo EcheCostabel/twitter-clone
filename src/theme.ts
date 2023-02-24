@@ -9,4 +9,11 @@ export default extendTheme ({
     colors: {
         primary: theme.colors.twitter
     },
+    styles: {
+        global: {
+            'html, body, #root': {
+                height: '100%',
+            }
+        }
+    }
 })
