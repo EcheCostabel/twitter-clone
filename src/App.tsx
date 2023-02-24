@@ -1,13 +1,14 @@
-import {Text} from '@chakra-ui/react'
+import React from 'react'
+import Layout from "./layout"
+
+
 
 const App: React.FC = () => {
 
-
   return (
-    <Text color="primary.500">
-      Hello World
-    </Text>
+  <Layout>Hola</Layout>
   )
-}
+  
+};
 
 export default App
