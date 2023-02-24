@@ -22,7 +22,9 @@ import {
   BsThreeDots,
   BsHouseFill,
   BsBellFill,
-  BsEnvelopeFill
+  BsEnvelopeFill,
+  BsBookmarkFill,
+  BsPersonFill
 } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { IconType } from "react-icons";
@@ -58,6 +60,30 @@ const LINKS: ListLink[] = [
     text: "Mensajes",
     activeIcon: BsEnvelopeFill,
     inactiveIcon: BsEnvelope,
+  },
+  {
+    href: "/bookmarks",
+    text: "Guardados",
+    activeIcon: BsBookmarkFill,
+    inactiveIcon: BsBookmark,
+  },
+  {
+    href: "/lists",
+    text: "Lista",
+    activeIcon: BsList,
+    inactiveIcon: BsList,
+  },
+  {
+    href: "/profile",
+    text: "Perfil",
+    activeIcon: BsPersonFill,
+    inactiveIcon: BsPerson,
+  },
+  {
+    href: "/options",
+    text: "Mas opciones",
+    activeIcon: BsThreeDots,
+    inactiveIcon: BsThreeDots,
   },
 ];
 
@@ -111,30 +137,6 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
                 </Stack>
               </Link>
             ))}
-            <Stack direction="row" alignItems="center" spacing={6}>
-              <Icon as={BsBookmark} height={6} width={6}></Icon>
-              <Text fontWeight="bold" fontSize="lg">
-                Guardados
-              </Text>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={6}>
-              <Icon as={BsList} height={6} width={6}></Icon>
-              <Text fontWeight="bold" fontSize="lg">
-                Listas
-              </Text>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={6}>
-              <Icon as={BsPerson} height={6} width={6}></Icon>
-              <Text fontWeight="bold" fontSize="lg">
-                Perfil
-              </Text>
-            </Stack>
-            <Stack direction="row" alignItems="center" spacing={6}>
-              <Icon as={BsThreeDots} height={6} width={6}></Icon>
-              <Text fontWeight="bold" fontSize="lg">
-                Mas opciones
-              </Text>
-            </Stack>
           </Stack>
           <Button size="lg" colorScheme={"primary"}>
             Twittear
