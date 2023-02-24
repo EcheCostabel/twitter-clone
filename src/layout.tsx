@@ -2,7 +2,6 @@ import React from 'react'
 import {Container, Stack, Text, Icon} from  '@chakra-ui/react';
 import {FaTwitter} from 'react-icons/fa'
 import theme from './theme';
-import { ColorModeScript } from '@chakra-ui/react'
 
 interface propsWithChildren {
     children: React.ReactNode
@@ -12,10 +11,10 @@ interface propsWithChildren {
 
 const Layout = ({ children }: propsWithChildren): JSX.Element => {
     return (
-        <Container alignSelf='center' maxWidth='container.md'>
-            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <Container alignSelf='center' maxWidth='container.md' paddingY={4}>
+            
             <Stack direction='row'>
-                <Stack>
+                <Stack spacing={4} paddingX={4} borderRightWidth={1} borderRightColor='gray.900' >
                     <Icon as={FaTwitter}></Icon>
                     <Stack>
                         <Stack direction='row' alignItems='center' spacing={3}>
