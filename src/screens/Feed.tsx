@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+
 
 const FeedScreen: React.FC = () => {
   return (
-    <div>FeedScreen</div>
+    <div>
+            FeedScreen
+    </div>
   )
 }
 
