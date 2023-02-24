@@ -15,5 +15,19 @@ export default extendTheme ({
                 height: '100%',
             }
         }
+    },
+    components: {
+        Button: {
+            baseStyle: {
+                borderLeftRadius: 9999,
+                borderRightRadius: 9999,
+            },
+            sizes: {
+                lg: {
+                    paddingY: 3,
+                    fontSize: 'md'
+                }
+            }
+        }
     }
 })
