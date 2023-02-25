@@ -9,6 +9,7 @@ import {
   StackDivider,
   useColorMode,
   useColorModeValue,
+  Image
 } from "@chakra-ui/react";
 import { FaTwitter } from "react-icons/fa";
 import {
@@ -24,7 +25,7 @@ import {
   BsBellFill,
   BsEnvelopeFill,
   BsBookmarkFill,
-  BsPersonFill
+  BsPersonFill,
 } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { IconType } from "react-icons";
@@ -104,46 +105,55 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
       paddingX={0}
     >
       <Stack direction="row" height="100%" divider={<StackDivider />}>
-        <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72}>
-          <Icon
-            as={FaTwitter}
-            color={logoColor}
-            width={7}
-            height={7}
-            onClick={toggleColorMode}
-          ></Icon>
+        <Stack justifyContent='space-between'>
+          <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72}>
+            <Icon
+              as={FaTwitter}
+              color={logoColor}
+              width={7}
+              height={7}
+              onClick={toggleColorMode}
+            ></Icon>
 
-          <Stack spacing={6} fontSize="xl" fontWeight="bold">
-            {LINKS.map((link) => (
-              <Link to={link.href} key={link.href}>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  spacing={6}
-                  color={pathname === link.href ? "primary.500" : "inherit"}
-                >
-                  <Icon
-                    as={
-                      pathname === link.href
-                        ? link.activeIcon
-                        : link.inactiveIcon
-                    }
-                    height={6}
-                    width={6}
-                  ></Icon>
-                  <Text fontWeight="bold" fontSize="lg">
-                    {link.text}
-                  </Text>
-                </Stack>
-              </Link>
-            ))}
+            <Stack spacing={6} fontSize="xl" fontWeight="bold">
+              {LINKS.map((link) => (
+                <Link to={link.href} key={link.href}>
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    spacing={6}
+                    color={pathname === link.href ? "primary.500" : "inherit"}
+                  >
+                    <Icon
+                      as={
+                        pathname === link.href
+                          ? link.activeIcon
+                          : link.inactiveIcon
+                      }
+                      height={6}
+                      width={6}
+                    ></Icon>
+                    <Text fontWeight="bold" fontSize="lg">
+                      {link.text}
+                    </Text>
+                  </Stack>
+                </Link>
+              ))}
+            </Stack>
+            <Button size="lg" colorScheme={"primary"}>
+              Twittear
+            </Button>
           </Stack>
-          <Button size="lg" colorScheme={"primary"}>
-            Twittear
-          </Button>
+          <Stack direction='row' justifyContent='space-between' >
+            <Stack direction='row'>
+            <Image src="//placehold.it/64x64" />
+            </Stack>
+            <Icon as={BsThreeDots}></Icon>
+          </Stack>
         </Stack>
         <Box paddingX={4}>{children}</Box>
       </Stack>
+
     </Container>
   );
 };
