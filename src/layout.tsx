@@ -156,7 +156,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
             <Icon as={BsThreeDots}></Icon>
           </Stack>
         </Stack>
-        <Box paddingX={4}>{children}</Box>
+        <Box paddingX={4} width='60%'>{children}</Box>
       </Stack>
 
     </Container>
