@@ -147,6 +147,10 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
           <Stack direction='row' justifyContent='space-between' >
             <Stack direction='row'>
             <Image src="//placehold.it/64x64" />
+            <Stack>
+                <Text>.</Text>
+                <Text>@echecostabel</Text>
+            </Stack>
             </Stack>
             <Icon as={BsThreeDots}></Icon>
           </Stack>
