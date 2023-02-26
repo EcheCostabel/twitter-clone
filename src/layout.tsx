@@ -96,6 +96,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
   const { toggleColorMode } = useColorMode();
   const { pathname } = useLocation();
   const logoColor = useColorModeValue("primary.500", undefined);
+  const userColor = useColorModeValue(undefined, 'white');
 
   return (
     <Container
@@ -144,12 +145,12 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
               Twittear
             </Button>
           </Stack>
-          <Stack direction='row' justifyContent='space-between' >
-            <Stack direction='row'>
-            <Image src="//placehold.it/64x64" />
-            <Stack>
-                <Text>.</Text>
-                <Text>@echecostabel</Text>
+          <Stack direction='row' justifyContent='space-between' alignItems='center' paddingY={4} paddingX={4}>
+            <Stack direction='row' alignItems='center'>
+            <Image src="//placehold.it/64x64" borderRadius='50%' width={10} height={10} />
+            <Stack spacing='0'>
+                <Text fontWeight='bold' color={userColor} fontSize='sm'>.</Text>
+                <Text fontSize='sm' color='gray.600'>@echecostabel</Text>
             </Stack>
             </Stack>
             <Icon as={BsThreeDots}></Icon>
