@@ -9,10 +9,11 @@ import {
   Image,
   Textarea,
   Button,
-  CircularProgress
+  CircularProgress,
+  Box
 } from "@chakra-ui/react";
 import React from "react";
-import { BsStar } from "react-icons/bs";
+import { BsPlus, BsStar } from "react-icons/bs";
 
 const TWEETS = new Array(12).fill(true).map((_, index) => index);
 
@@ -41,7 +42,9 @@ const FeedScreen: React.FC = () => (
           <Stack direction='row' spacing={3}>
             <Stack direction='row' divider={<StackDivider />} alignItems='center' spacing={4}>
               <CircularProgress size={6} trackColor='whiteAlpha.400' value={20} color='primary.500' ></CircularProgress>
-              <Button variant='outline' colorScheme='primary' height={10} width={10} borderRadius='50%'>+</Button>
+              <Box alignItems='center' borderColor='primary.500' borderRadius='50%' borderWidth={1} display='flex' height={6} justifyContent='center' position='relative' width={6}>
+                <Icon as={BsPlus} width={6} height={6} color='primary.500' position='absolute'></Icon>
+              </Box>
             </Stack>
           <Button colorScheme='primary'>Twittear</Button>
           </Stack>
