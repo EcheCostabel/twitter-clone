@@ -31,16 +31,16 @@ const FeedScreen: React.FC = () => (
       <Stack divider={<StackDivider />} width='100%'>
         <Textarea variant='unstyled' fontSize='xl' fontWeight='500'></Textarea>
         <Stack direction='row' justifyContent='space-between' alignItems='center'>  
-          <Stack direction='row'>
+          <Stack direction='row' color='primary.500'>
             <Icon as={BsStar} ></Icon>
             <Icon as={BsStar} ></Icon>
             <Icon as={BsStar} ></Icon>
             <Icon as={BsStar} ></Icon>
             <Icon as={BsStar} ></Icon>
           </Stack>
-          <Stack direction='row'>
-            <Stack direction='row' divider={<StackDivider />} alignItems='center'>
-              <CircularProgress size={6}></CircularProgress>
+          <Stack direction='row' spacing={3}>
+            <Stack direction='row' divider={<StackDivider />} alignItems='center' spacing={4}>
+              <CircularProgress size={6} trackColor='whiteAlpha.400' value={20} color='primary.500' ></CircularProgress>
               <Button variant='outline' colorScheme='primary' height={10} width={10} borderRadius='50%'>+</Button>
             </Stack>
           <Button colorScheme='primary'>Twittear</Button>
