@@ -39,7 +39,7 @@ interface ListLink {
 
 const LINKS: ListLink[] = [
   {
-    href: "/home",
+    href: "/",
     text: "Inicio",
     activeIcon: BsHouseFill,
     inactiveIcon: BsHouse,
@@ -141,7 +141,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
                 </Link>
               ))}
             </Stack>
-            <Button size="lg" colorScheme={"primary"}>
+            <Button size="lg" colorScheme={"primary"} width='100%'>
               Twittear
             </Button>
           </Stack>
