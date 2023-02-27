@@ -39,9 +39,9 @@ const FeedScreen: React.FC = () => (
             <Icon as={BsStar} ></Icon>
           </Stack>
           <Stack direction='row'>
-            <Stack direction='row' divider={<StackDivider />}>
-              <CircularProgress></CircularProgress>
-              <Button variant='outline' borderRadius='50%'>+</Button>
+            <Stack direction='row' divider={<StackDivider />} alignItems='center'>
+              <CircularProgress size={6}></CircularProgress>
+              <Button variant='outline' colorScheme='primary' height={10} width={10} borderRadius='50%'>+</Button>
             </Stack>
           <Button colorScheme='primary'>Twittear</Button>
           </Stack>
