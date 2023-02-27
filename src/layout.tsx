@@ -106,7 +106,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
       paddingX={0}
     >
       <Stack direction="row" height="100%" divider={<StackDivider />}>
-        <Stack justifyContent='space-between'>
+        <Stack maxHeight='100%' justifyContent='space-between'>
           <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72}>
             <Icon
               as={FaTwitter}
