@@ -10,10 +10,10 @@ const TWEETS = new Array(12).fill(true).map((_, index) => index);
 
 const FeedScreen: React.FC = () => {
   return (
-    <Stack paddingY={12} spacing={6}>
+    <Stack paddingY={12} spacing={6} overflowY='auto' maxHeight='100vh'>
       {TWEETS.map((index) => (
         <Stack key={index} spacing={4}>
-          <Stack direction="row" spacing={4}>
+          <Stack direction="row" spacing={4} alignItems='center'>
             <SkeletonCircle height="12" width="12" />
             <Stack>
               <Skeleton height={6} width="120px" />
