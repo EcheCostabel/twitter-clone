@@ -9,7 +9,7 @@ import {
   StackDivider,
   useColorMode,
   useColorModeValue,
-  Image
+  Image,
 } from "@chakra-ui/react";
 import { FaTwitter } from "react-icons/fa";
 import {
@@ -105,9 +105,9 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
       height="100%"
       paddingX={0}
     >
-      <Stack direction="row" height="100%" divider={<StackDivider />}>
-        <Stack maxHeight='100%' justifyContent='space-between'>
-          <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72}>
+      <Stack direction="row" height="100%" divider={<StackDivider />} >
+        <Stack maxHeight='100%' justifyContent='space-between' >
+          <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72} >
             <Icon
               as={FaTwitter}
               color={logoColor}

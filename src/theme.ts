@@ -39,7 +39,8 @@ export default extendTheme ({
                 _hover: {
                     backgroundColor: `${props.colorScheme}.600`
                 }
-            })
+            }),
+
         }
     }
 })
