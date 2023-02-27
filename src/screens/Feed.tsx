@@ -6,6 +6,9 @@ import {
   Stack,
   StackDivider,
   Text,
+  Image,
+  Textarea,
+  Button
 } from "@chakra-ui/react";
 import React from "react";
 import { BsStar } from "react-icons/bs";
@@ -15,9 +18,24 @@ const TWEETS = new Array(12).fill(true).map((_, index) => index);
 const FeedScreen: React.FC = () => (
   <Stack divider={<StackDivider />} spacing={0} direction='row' >
     <Stack divider={<StackDivider />} spacing={0} width='100%'>
-      <Stack direction='row' alignItems='center' justifyContent='space-between' paddingX={4} paddingY={2}>
+      <Stack direction='row' alignItems='center' justifyContent='space-between' paddingX={4} paddingY={3}>
         <Text fontWeight='2xl' fontSize='lg'>Inicio</Text>
         <Icon as={BsStar} width={5} height={5} color='primary.500'></Icon>
+      </Stack>
+      <Stack direction='row' paddingY={2} paddingX={4} spacing={4}>
+        <Image  src='https://pbs.twimg.com/profile_images/1148504776407232512/LJF8Bnz8_400x400.jpg' borderRadius='50%' width={12} height={12} />
+      <Stack divider={<StackDivider />} width='100%'>
+        <Textarea variant='unstyled' fontSize='lg'></Textarea>
+        <Stack direction='row' justifyContent='space-between'>  
+          <Stack direction='row'>
+            <Icon as={BsStar} ></Icon>
+            <Icon as={BsStar} ></Icon>
+            <Icon as={BsStar} ></Icon>
+            <Icon as={BsStar} ></Icon>
+          </Stack>
+          <Button colorScheme='primary'>Twittear</Button>
+        </Stack>
+      </Stack>
       </Stack>
       <Stack
       divider={<StackDivider />}
