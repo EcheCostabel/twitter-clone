@@ -99,13 +99,14 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
   const userColor = useColorModeValue(undefined, 'white');
 
   return (
+
     <Container
       alignSelf="center"
       maxWidth="container.xl"
       height="100%"
       paddingX={0}
     >
-      <Stack direction="row" height="100%" divider={<StackDivider />} >
+      <Stack direction="row" height="100%" divider={<StackDivider />}>
         <Stack maxHeight='100%' justifyContent='space-between' >
           <Stack spacing={8} paddingX={6} paddingY={3} minWidth={72} >
             <Icon
@@ -148,7 +149,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
           <Stack direction='row' justifyContent='space-between' alignItems='center' paddingY={4} paddingX={4}>
             <Stack direction='row' alignItems='center'>
             <Image src="https://pbs.twimg.com/profile_images/1148504776407232512/LJF8Bnz8_400x400.jpg" borderRadius='50%' width={10} height={10} />
-            <Stack spacing='0'>
+            <Stack spacing={0}>
                 <Text fontWeight='bold' color={userColor} fontSize='sm'>.</Text>
                 <Text fontSize='sm' color='gray.600'>@echecostabel</Text>
             </Stack>
@@ -156,7 +157,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
             <Icon as={BsThreeDots}></Icon>
           </Stack>
         </Stack>
-        <Box paddingX={4} width='100%'>{children}</Box>
+        <Box paddingX={0} width='100%'>{children}</Box>
       </Stack>
 
     </Container>

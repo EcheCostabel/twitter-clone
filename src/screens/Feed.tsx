@@ -12,15 +12,19 @@ import {
   CircularProgress,
   Box,
   useColorModeValue,
+  Divider,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsPlus, BsStar } from "react-icons/bs";
+import { BsImage, BsPlus, BsStar } from "react-icons/bs";
+import { AiOutlineGif, AiOutlineSmile, AiOutlineCalendar } from "react-icons/ai";
+import { RiBarChartHorizontalLine } from "react-icons/ri";
+import { MdOutlineLocationOn } from "react-icons/md";
 
 const TWEETS = new Array(12).fill(true).map((_, index) => index);
 
 const FeedScreen: React.FC = () => {
 
-  const progressColor = useColorModeValue('primary.50', 'whiteAlpha.300')
+  const progressColor = useColorModeValue('gray.100', 'whiteAlpha.300')
  
   return(
   <Stack divider={<StackDivider />} spacing={0} direction="row">
@@ -64,12 +68,13 @@ const FeedScreen: React.FC = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Stack direction="row" color="primary.500">
-              <Icon as={BsStar}></Icon>
-              <Icon as={BsStar}></Icon>
-              <Icon as={BsStar}></Icon>
-              <Icon as={BsStar}></Icon>
-              <Icon as={BsStar}></Icon>
+            <Stack direction="row" color="primary.500" spacing={4}>
+              <Icon as={BsImage} width={5} height={5}></Icon>
+              <Icon as={AiOutlineGif} width={5} height={5}></Icon>
+              <Icon as={RiBarChartHorizontalLine} width={5} height={5}></Icon>
+              <Icon as={AiOutlineSmile} width={5} height={5}></Icon>
+              <Icon as={AiOutlineCalendar} width={5} height={5}></Icon>
+              <Icon as={MdOutlineLocationOn} width={5} height={5}></Icon>
             </Stack>
             <Stack direction="row" spacing={3}>
               <Stack
@@ -111,6 +116,7 @@ const FeedScreen: React.FC = () => {
           </Stack>
         </Stack>
       </Stack>
+      <Divider borderTopWidth={6} borderBottomWidth={6}></Divider>
       <Stack
         divider={<StackDivider />}
         flex={1}
