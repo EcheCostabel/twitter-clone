@@ -14,21 +14,23 @@ import {
   useColorModeValue,
   Divider,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { BsImage, BsPlus, BsStar } from "react-icons/bs";
 import { AiOutlineGif, AiOutlineSmile, AiOutlineCalendar } from "react-icons/ai";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import { MdOutlineLocationOn } from "react-icons/md";
 
-const TWEETS = new Array(12).fill(true).map((_, index) => index);
 
 const FeedScreen: React.FC = () => {
+
+  const [ count, setCount ] = useState(1)
+  const tweets = useMemo(() => new Array(count).fill(true).map((_, index) => index), [count])
 
   const progressColor = useColorModeValue('gray.100', 'whiteAlpha.300')
  
   return(
-  <Stack divider={<StackDivider />} spacing={0} direction="row">
-    <Stack divider={<StackDivider />} spacing={0} width="100%">
+  <Stack divider={<StackDivider />} spacing={0} direction="row"  >
+    <Stack divider={<StackDivider />} spacing={0} maxWidth={600} width="100%">
       <Stack
         direction="row"
         alignItems="center"
@@ -57,7 +59,7 @@ const FeedScreen: React.FC = () => {
           width={12}
           height={12}
         />
-        <Stack divider={<StackDivider />} width="100%">
+        <Stack divider={<StackDivider />} width="100%" spacing={3}>
           <Textarea
             variant="unstyled"
             fontSize="xl"
@@ -111,7 +113,7 @@ const FeedScreen: React.FC = () => {
                   ></Icon>
                 </Box>
               </Stack>
-              <Button colorScheme="primary">Twittear</Button>
+              <Button colorScheme="primary" onClick={() => setCount((count) => count + 1)}>Twittear</Button>
             </Stack>
           </Stack>
         </Stack>
@@ -120,13 +122,12 @@ const FeedScreen: React.FC = () => {
       <Stack
         divider={<StackDivider />}
         flex={1}
-        maxWidth="600px"
         spacing={0}
         overflowY="auto"
         maxHeight="100vh"
         sx={{ "&::-webkit-scrollbar": { display: "none" } }}
       >
-        {TWEETS.map((index) => (
+        {tweets.map((index) => (
           <Stack key={index} spacing={4}>
             <Stack
               direction="row"
