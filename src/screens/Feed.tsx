@@ -11,13 +11,18 @@ import {
   Button,
   CircularProgress,
   Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsPlus, BsStar } from "react-icons/bs";
 
 const TWEETS = new Array(12).fill(true).map((_, index) => index);
 
-const FeedScreen: React.FC = () => (
+const FeedScreen: React.FC = () => {
+
+  const progressColor = useColorModeValue('primary.50', 'whiteAlpha.300')
+ 
+  return(
   <Stack divider={<StackDivider />} spacing={0} direction="row">
     <Stack divider={<StackDivider />} spacing={0} width="100%">
       <Stack
@@ -75,7 +80,7 @@ const FeedScreen: React.FC = () => (
               >
                 <CircularProgress
                   size={6}
-                  trackColor="whiteAlpha.400"
+                  trackColor={progressColor}
                   value={20}
                   color="primary.500"
                 ></CircularProgress>
@@ -149,6 +154,6 @@ const FeedScreen: React.FC = () => (
       {""}
     </Text>
   </Stack>
-);
+)};
 
 export default FeedScreen;
