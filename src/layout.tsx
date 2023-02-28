@@ -142,7 +142,7 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
                 </Link>
               ))}
             </Stack>
-            <Button size="lg" colorScheme={"primary"} width='100%'>
+            <Button size="lg" colorScheme="primary" width='100%'>
               Twittear
             </Button>
           </Stack>
@@ -150,8 +150,8 @@ const Layout = ({ children }: propsWithChildren): JSX.Element => {
             <Stack direction='row' alignItems='center'>
             <Image src="https://pbs.twimg.com/profile_images/1148504776407232512/LJF8Bnz8_400x400.jpg" borderRadius='50%' width={10} height={10} />
             <Stack spacing={0}>
-                <Text fontWeight='bold' color={userColor} fontSize='sm'>.</Text>
-                <Text fontSize='sm' color='gray.600'>@echecostabel</Text>
+                <Text fontWeight='bold' color={userColor} fontSize='sm'>Learning Typescript</Text>
+                <Text fontSize='sm' color='gray.600'>@ExequielCostabel</Text>
             </Stack>
             </Stack>
             <Icon as={BsThreeDots}></Icon>

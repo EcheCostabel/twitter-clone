@@ -50,8 +50,8 @@ const FeedScreen: React.FC = () => {
         paddingX={20}
         fontWeight="bold"
       >
-        <Button>Para ti</Button>
-        <Button>Siguiendo</Button>
+        <Box>Para ti</Box>
+        <Box>Siguiendo</Box>
       </Stack>
       <Stack direction="row" paddingY={2} paddingX={4} spacing={4}>
         <Image
