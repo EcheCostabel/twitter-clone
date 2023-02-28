@@ -39,7 +39,7 @@ const FeedScreen: React.FC = () => {
         paddingX={4}
         paddingY={3}
       >
-        <Text fontWeight="2xl" fontSize="lg">
+        <Text  fontSize="lg" fontWeight='bold'>
           Inicio
         </Text>
       </Stack>
@@ -129,27 +129,35 @@ const FeedScreen: React.FC = () => {
         sx={{ "&::-webkit-scrollbar": { display: "none" } }}
       >
         {tweets.map((index) => (
-          <Stack key={index} spacing={4} maxWidth={480} padding={4} width='100%'
+          <Stack key={index} spacing={4} padding={4} width='100%'
           >   
+      
+            <Stack direction='row' alignItems='center'>
+
               <SkeletonCircle
+                startColor="whiteAlpha.300"
+                endColor="whiteAlpha.300"
                 height={12}
                 width={12}
                 minWidth={12}
                 minHeight={12}
-              />
+                />
               <Stack spacing={4} width='100%'>
                 <Stack alignItems='flex-end' direction='row' spacing={2}>
-                <Skeleton height={6} width="120px" />
-                <Skeleton height={3} width="80px" />
+                <Skeleton startColor="whiteAlpha.300" endColor="whiteAlpha.300" height={6} width="120px" />
+                <Skeleton startColor="whiteAlpha.300" endColor="whiteAlpha.300" height={3} width="80px" />
                 </Stack>
               </Stack>
+                </Stack>
+                
            
             <SkeletonText
+              startColor="whiteAlpha.300" 
+              endColor="whiteAlpha.300"
               height="100%"
               noOfLines={6}
               spacing={2}
               paddingX={4}
-
             />
           </Stack>
         ))}
