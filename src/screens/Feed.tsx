@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   Divider,
 } from "@chakra-ui/react";
+import { AnimatePresence , motion } from 'framer-motion';
 import React, { useMemo, useState } from "react";
 import { BsImage, BsPlus, BsStar } from "react-icons/bs";
 import { AiOutlineGif, AiOutlineSmile, AiOutlineCalendar } from "react-icons/ai";
@@ -128,30 +129,27 @@ const FeedScreen: React.FC = () => {
         sx={{ "&::-webkit-scrollbar": { display: "none" } }}
       >
         {tweets.map((index) => (
-          <Stack key={index} spacing={4}>
-            <Stack
-              direction="row"
-              spacing={4}
-              alignItems="center"
-              maxWidth={480}
-              padding={4}
-            >
+          <Stack key={index} spacing={4} maxWidth={480} padding={4} width='100%'
+          >   
               <SkeletonCircle
-                height="12"
-                width="12"
+                height={12}
+                width={12}
                 minWidth={12}
                 minHeight={12}
               />
-              <Stack>
+              <Stack spacing={4} width='100%'>
+                <Stack alignItems='flex-end' direction='row' spacing={2}>
                 <Skeleton height={6} width="120px" />
                 <Skeleton height={3} width="80px" />
+                </Stack>
               </Stack>
-            </Stack>
+           
             <SkeletonText
               height="100%"
               noOfLines={6}
               spacing={2}
               paddingX={4}
+
             />
           </Stack>
         ))}
