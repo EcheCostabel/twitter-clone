@@ -13,10 +13,11 @@ import {
   Box,
   useColorModeValue,
   Divider,
+  Input,
 } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useMemo, useState } from "react";
-import { BsImage, BsPlus, BsStar } from "react-icons/bs";
+import { BsImage, BsPlus, BsStar, BsThreeDots } from "react-icons/bs";
 import {
   AiOutlineGif,
   AiOutlineSmile,
@@ -32,7 +33,7 @@ const FeedScreen: React.FC = () => {
     [count]
   );
 
-  const progressColor = useColorModeValue("gray.100", "whiteAlpha.300");
+  const progressColor = useColorModeValue("gray.100", "whiteAlpha.50");
 
   return (
     <Stack divider={<StackDivider />} spacing={0} direction="row">
@@ -179,8 +180,44 @@ const FeedScreen: React.FC = () => {
           ))}
         </Stack>
       </Stack>
-      <Stack>
-            <Text>asdsa</Text>
+      <Stack paddingY={2} paddingX={6} width='70%'>
+        <Stack>
+            <Input placeholder="Buscar en Twitter" borderRadius='9999' backgroundColor='whiteAlpha.200' />
+        </Stack>
+      <Stack backgroundColor={progressColor} padding={4} borderRadius={15}>
+        <Stack paddingBottom={3}>
+          <Text fontWeight='bold' fontSize='xl'>Qué está pasando</Text>
+        </Stack>
+        <Stack direction='row' justifyContent='space-between' alignItems='center'>
+          <Stack spacing={0}>
+              <Text fontSize='sm'>Premier League - EN DIRECTO</Text>
+              <Text fontWeight='bold'>Arsenal FC vs Everton FC</Text>
+          </Stack>
+          <Icon as={BsThreeDots} cursor='pointer'></Icon>
+        </Stack>
+        <Stack direction='row' justifyContent='space-between' alignItems='center' paddingY={4}>
+          <Stack spacing={0}>
+          <Text fontSize='sm'>Tendencia en Argentina</Text>
+          <Text fontWeight='bold'>#SinLuz</Text>
+          </Stack>
+          <Icon as={BsThreeDots} cursor='pointer'></Icon>
+        </Stack>
+        <Stack direction='row' paddingY={4} justifyContent='space-between' alignItems='center'>
+          <Stack spacing={0}>
+          <Text fontSize='sm'>Tendencia en Argentina</Text>
+          <Text fontWeight='bold'>#CorteDeLuz</Text>
+          </Stack>
+          <Icon as={BsThreeDots} cursor='pointer'></Icon>
+        </Stack>
+        <Stack direction='row' paddingY={4} justifyContent='space-between' alignItems='center'>
+          <Stack spacing={0}>
+          <Text fontSize='sm'>Tendencia en Argentina</Text>
+          <Text fontWeight='bold'>Edenor</Text>
+          <Text fontSize='sm' paddingY={0}>3.702 Tweets</Text>
+          </Stack>
+          <Icon as={BsThreeDots} cursor='pointer'></Icon>
+        </Stack>
+      </Stack>
       </Stack>
      
     </Stack>
