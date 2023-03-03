@@ -11,9 +11,9 @@ export default extendTheme ({
         primary: theme.colors.twitter
     },
     styles: {
-        global: (props) => ({
+        global: () => ({
             'html, body, #root': {
-                color: mode(undefined, 'whiteAlpha.800')(props),
+                color: mode(undefined, 'whiteAlpha.800'),
                 height: '100%'
             }
         })
@@ -32,12 +32,10 @@ export default extendTheme ({
             }
         },
         variants: {
-            solid: (props) => ({
-                backgroundColor: `${props.colorScheme}.500`,
-                color: mode(undefined, 'white')(props),
+            solid: () => ({ 
+                color: mode(undefined, 'white'),
                 fontWeight: 'bold',
-                _hover: {
-                    backgroundColor: `${props.colorScheme}.600`
+                _hover: { 
                 }
             }),
 
